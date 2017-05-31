@@ -1,0 +1,51 @@
+<input type="checkbox"  data-bind='checked: loadContracts.preStatusArchived' class="btn btn-default">
+Show Archived Opportunities
+</input>
+<table id="activeContractsTable" class="ContractsTable" data-bind="visible: !loadContracts.preStatusArchived() &&  !loadContracts.preStatusPrePublished ()">
+  <thead>
+	<tr>
+		<th class="contract_name">
+			<h1 style="margin-left:10px;">Opportunities</h1>
+		</th>
+		<th>Vehicle</th>
+		<th>Solicitation Number</th>
+		<th>Customer</th>
+		<th>Type of Solicitation</th>
+		<th>Proposal Due Date</th>
+	</tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<table id="archivedContractsTable" data-bind="visible: loadContracts.preStatusArchived">
+  <thead>
+    <tr>
+		<th class="contract_name">
+			<h1 style="margin-left:10px;">Opportunities Archived</h1>
+		</th>
+		<th>Vehicle</th>
+		<th>Solicitation Number</th>
+		<th>Customer</th>
+		<th>Type of Solicitation</th>
+		<th>Proposal Due Date</th>
+	</tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<table id="prepublishedContractsTable" data-bind="visible: loadContracts.preStatusPrePublished ">
+  <thead>
+    <tr>
+		<th class="contract_name">
+			<h1 style="margin-left:10px;">Opportunities Published</h1>
+		</th>
+		<th>Vehicle</th>
+		<th>Solicitation Number</th>
+		<th>Customer</th>
+		<th>Type of Solicitation</th>
+		<th>Proposal Due Date</th>
+	</tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>

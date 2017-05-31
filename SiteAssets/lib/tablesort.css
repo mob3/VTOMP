@@ -1,0 +1,164 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700);
+/*
+* {
+  box-sizing        :border-box;
+  -moz-box-sizing   :border-box;
+  -webkit-box-sizing:border-box;
+  font-family: Roboto, Arial, Helvetica, Sans-serif;
+}
+
+body {
+    background : #f0f0f0;
+    padding: 10px 30px 20px;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+p {
+    font-size    : 13px;
+    font-weight  : 300;
+    margin-bottom: 6px;
+    margin-top   : 0;
+    color        : #595959;
+}
+
+a {
+    color             : rgb(0, 155, 194);
+    text-decoration   : none;
+    -webkit-transition: color 0.2s;
+    -ms-transition    : color 0.2s;
+    -o-transition     : color 0.2s;
+    -moz-transition   : color 0.2s;
+    transition        : color 0.2s;
+}
+
+a:hover {
+    color: rgb(83, 192, 235);
+}
+code {
+    background   : rgb(46, 46, 46);
+    color        : rgb(172, 172, 172);
+    display      : block;
+    padding      : 10px;
+    margin-bottom: 10px;
+    font-size    : 13px;
+    font-family  : monospace;
+}
+
+table {
+    border-collapse: collapse;
+    background     : #fff;
+    box-shadow     : 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom  : 10px;
+    width: 100%;
+}
+
+th {
+    background        : rgb(202, 0, 89);
+    color             : #fff;
+    font-weight       : 300;
+    -webkit-transition: background 0.3s;
+    -ms-transition    : background 0.3s;
+    -o-transition     : background 0.3s;
+    -moz-transition   : background 0.3s;
+    transition        : background 0.3s;
+}
+
+td {
+    font-weight: 300;
+}
+
+td,th {
+    padding: 0 10px;
+    line-height: 32px;
+    font-size: 13px;
+}
+tbody tr:nth-child(even) {
+    background: rgb(248, 248, 248);
+}
+*/
+
+/* Table Sorting */
+th.table-sort {
+    padding-right: 36px;
+    text-align   : left;
+    cursor       : pointer;
+}
+
+th.table-sort-ui {
+    padding: 3px 0px 3px 10px;
+    text-align   : left;
+    cursor       : pointer;
+}
+
+td.table-sort-ui {
+    padding: 3px 0px 3px 10px;
+    text-align   : left;
+    cursor       : pointer;
+}
+
+
+th.table-sort:hover {
+/*    background        : rgb(213, 17, 88);*/
+}
+
+.table-sort-field {
+    position: relative;
+}
+/*
+.table-sort-control {
+    background: rgba(0,0,0,0.1);
+    height    : 32px;
+    width     : 16px;
+    position  : absolute;
+    top       : 0;
+    right     : -36px;
+}
+
+.table-sort-up,
+.table-sort-down {
+    border  : 3px solid transparent;
+    position: absolute;
+    right   : 6px;
+}
+
+.table-sort-up {
+    border-bottom-color: rgba(255,255,255,0.3);
+    top                : 8px;
+}
+
+.table-sort-down {
+    border-top-color: rgba(255,255,255,0.3);
+    top             : 19px;
+}
+
+.table-sort-order-asc .table-sort-up {
+    border-bottom-color: rgba(255,255,255,1);
+}
+
+.table-sort-order-des .table-sort-down {
+    border-top-color: rgba(255,255,255,1);
+}
+*/
+/* Table Sort Search */
+.table-sort-search-container {
+    background: rgb(63, 63, 63);
+    padding   : 3px 8px;
+}
+.table-sort-search-input {
+    font-size         : 13px;
+    padding           : 0 10px;
+    height            : 25px;
+    line-height       : 25px;
+    -webkit-appearance: none;
+    border            : none;
+    width             : 100%;
+    border-radius     : 6px;
+    background        : #f0f0f0;
+}
+.table-sort-search-input:focus {
+    outline   : none;
+    background: #fff;
+}

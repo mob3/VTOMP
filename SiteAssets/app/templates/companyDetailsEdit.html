@@ -1,0 +1,249 @@
+﻿<!-- HTML for editcompany -->
+<h1>Corporate Capabilities Overview (Editing)</h1>
+    <div class="border-line"></div>
+ 	<button class="btn btn-default  top-buffer bottom-buffer" type="button" data-bind="click: SaveCompany">Save</button>
+ 	<button class="btn btn-default  top-buffer bottom-buffer" style="float:right" type="button" data-bind="click: DeleteCompany">Delete</button>
+    <div class="float_wrapper">
+    	<div  class="sec_head_left" style="float: left;">
+		<!-- Corporate Information Table -->
+        <table class="companyTable" style="width: 100%;">
+            <tbody >
+			<tr>
+                <td colspan="2" style="background-color:#4E7AC7;"><b class="sec_head_font" style="color:white">Corporate Information</b></td>	
+            </tr>
+            <tr>
+                <td class="field_lbl" style="margin-right: 15px;">Company Name</td>
+                <td class="field_txt" ><input type="text" data-bind="value: $root.editCompanyFields.Title" class="form-control"/></td>
+            </tr>
+            <tr>
+                <td class="field_lbl" style="margin-right: 15px;">Short Name</td>
+                <td class="field_txt" ><input  type="text" data-bind="value: $root.editCompanyFields.ShortTitle" class="form-control"/></td>
+            </tr>
+            <tr>
+                <td class="field_lbl">Website</td>
+                <td class="field_txt"  data-bind="with: editCompanyFields.Website">
+				    URL:   <input  type="text" data-bind="value: url" class="form-control"/><br/>
+				    Description:   <input  type="text" data-bind="value: description" class="form-control"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="field_lbl">DUNS</td>
+                <td class="field_txt" ><input  type="text" data-bind="value: $root.editCompanyFields.DUNS" class="form-control"/></td>
+            </tr>
+            <tr>
+                <td class="field_lbl">CAGE</td>
+                <td class="field_txt" ><input  type="text" data-bind="value: $root.editCompanyFields.CAGE" class="form-control"/></td>
+            </tr>
+            <tr>
+                <td class="field_lbl">Business Size</td>
+                <td class="field_txt">
+					<select data-bind="options: BusinessSizeChoices, value: editCompanyFields.BusinessSize" class="form-control"></select>
+                </td>
+            </tr>
+            <tr>
+                <td class="field_lbl">Socioeconomic/Disadvantaged Designation</td>
+                <td class="field_txt" >
+				    <input type="text" data-bind="value: editCompanyFields.SocioeconomicDisadvantagedDesignation" class="form-control"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="field_lbl">Headquarters Location</td>
+                <td class="field_txt" >
+				    <textarea id="inputHeadquartersLocation" data-bind='value: editCompanyFields.HeadquartersLocation' 
+				        rows='2' cols='60'  class="form-control" > </textarea>
+                </td>	
+            </tr>
+            <tr>
+                <td class="field_lbl">Facility Clearance Level</td>
+                <td class="field_txt">
+				        <select data-bind="options: FacilityClearanceLevelChoices, value: editCompanyFields.FacilityClearanceLevel" class="form-control"></select>
+                </td>	
+            </tr>
+            <tr>
+				<td class="field_lbl">Contractor Level</td>
+                <td class="field_txt">
+				    <select data-bind="options: ContractorLevelChoices, value: editCompanyFields.ContractorLevel" 
+				    class="form-control"></select>
+                </td>	
+            </tr>
+            <tr>
+                <td class="field_lbl">Certifications</td>
+                <td class="field_txt" >
+				    <textarea id="inputCertifications" data-bind='value: editCompanyFields.Certifications' 
+				    rows='2' cols='60'  class="form-control" > </textarea>
+                </td>	
+            </tr>
+            <tr>
+                <td class="field_lbl">Technology Partnerships</td>
+                <td class="field_txt">
+				    <input  type="text" data-bind="value: editCompanyFields.TechnologyPartnerships" class="form-control"/>
+                </td>	
+            </tr>
+            <tr>
+                <td class="field_lbl">Corporate Achievements</td>
+                <td class="field_txt"><input  type="text" data-bind="value: editCompanyFields.CorporateAchievements" class="form-control"/></td>	
+            </tr>
+            <tr >
+                <td style="max-width: 200px;"><b class="sec_head_font">Demonstrated Capabilities</b></td>
+                <td class="field_txt" style="max-width: 200px;padding-top: 2px; padding-bottom:2px">
+				    <textarea id="inputDemonstratedCapabilities" data-bind='value: editCompanyFields.DemonstratedCapabilities' 
+				    rows='6' cols='60'  class="form-control" > </textarea>
+                </td>
+            </tr>
+            <tr >
+                <td class="field_lbl" style="max-width: 200px;padding-bottom: 2px; padding-top: 2px">Relevant Corporate Experience</td>
+                <td class="field_txt" style="max-width: 200px;">
+				            <textarea  data-bind='value: editCompanyFields.RelevantExperience' 
+				            rows='4' cols='60'  class="form-control"> </textarea>
+                </td>
+            </tr>
+            
+        </tbody></table>
+  	<button class="btn btn-default  top-buffer bottom-buffer" type="button" data-bind="click: SaveCompany">Save</button>
+  	</div>
+	
+		<!-- Corporate Logo -->
+       <div class="sec_head_right" style="float: right;">
+            <div >
+			 	<span data-bind="if: editCompanyFields.logoUrl"> 
+			 	 	<img id="teamlogo" alt="Logo" data-bind="attr: { src: editCompanyFields.logoUrl, title: editCompanyFields.logoUrl }" 
+						style="max-height: 150px; max-width:150px;"/>
+			 	 </span>
+			<form>
+			<div class="form-group">
+				<label for="getCompanyLogoFile">Company Logo</label>
+				<span data-bind="if: editCompanyFields.logoUrl" style=" position: relative; right: -15px;">
+					<p data-bind="with: editCompanyFields.logoUrlObj">
+						<a data-bind="attr: { href: url }, text: name? name : url"></a>
+						<a href='#' data-bind='click: function(data, event) { $root.companyVm.deleteCompanyLogo(data, true) } '>Delete</a>
+					</p>
+			    </span>
+				<span data-bind="ifnot: editCompanyFields.logoUrl">No Logo Found.</span>
+			    <input id="getCompanyLogoFile" type="file" style="float:left;">
+			    <p class="help-block"></p><button id="addCompanyLogoFileButton" style="float: left; position: relative; right: -20px;"
+			      type="button" data-bind='click: companyVm.uploadCompanyLogoFile, text: editCompanyFields.logoUrl() ? "Upload and Replace" : "Upload"' 
+			      class="btn btn-default""></button>
+			</div>		
+			</form>
+           
+	<!-- Points of contact table -->
+    <table id="ctl00_PlaceHolderMain_user_lst" style="width: 100%;" class="companyTable">
+		<thead><tr>
+			<td colspan="9">
+                        <p><b class="sec_head_font">Points of Contact</b></p>
+                    </td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class="field_lbl">
+                        &nbsp;
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+			<td class="field_lbl">
+                        <span id="ctl00_PlaceHolderMain_user_lbl">Name</span>
+                    </td>
+			<td class="field_lbl">
+                        <span id="ctl00_PlaceHolderMain_role_lbl">Title</span>
+                    </td>
+			<td class="field_lbl">
+                        <span id="ctl00_PlaceHolderMain_email_lbl">Email</span>
+                    </td>
+			<td class="field_lbl">
+                        <span id="ctl00_PlaceHolderMain_work_lbl">Work Phone</span>
+                    </td>
+			<td class="field_lbl">
+                        <span id="ctl00_PlaceHolderMain_mobile_lbl">Mobile Phone</span>
+            </td>
+			<td> </td>
+		</tr>
+		</thead>
+		<tbody data-bind="foreach: selectedCompanyPOCs">
+		<tr>
+					<td><a data-bind="attr: { href: editUrl }">Edit</a></td>
+					<td><a href='#' data-bind='click: $root.removeCompanyPOC '>Delete</a></td>
+					<td><span data-bind="if: isPrimary">primary</span>
+					<span data-bind="ifnot: isPrimary"><a href='#' data-bind='click: function(data,event) { $root.setCompanyPOCType("Primary",data) } '>
+						Make Primary</a></span></td>
+					<td><span data-bind="if: isSecondary">secondary</span>
+					<span data-bind="ifnot: isSecondary"><a href='#' data-bind='click: function(data,event) { $root.setCompanyPOCType("Secondary",data) }'>
+						Make Secondary</a></span>
+					</td>
+			<td class="field_txt" data-bind="text: name "></td>
+			<td class="field_txt" data-bind="text: title "></td>
+			<td class="field_txt" data-bind="text: email "></td>
+			<td class="field_txt" data-bind="text: workPhone "></td>
+			<td class="field_txt" data-bind="text: mobilePhone "></td>
+		</tr>
+	</tbody></table>
+	<div data-bind="visible: availableCompanyPOCs().length">
+				Add POC:	            <select  
+				            data-bind="options: availableCompanyPOCs, optionsText: 'name', value: selectedAvailableCompanyPOCs, optionsCaption: 'Choose...'" 
+				            class="form-control"></select>
+					<button  style="float:left"
+		      type="button" data-bind='click: $root.addAvailablePOCtoCompanyPOCs, enable: selectedAvailableCompanyPOCs()' 
+		      class="btn btn-default" >Add</button>
+
+	</div>
+		<!-- Supporting Artifacts -->
+        <table class="companyTable">
+                <tbody><tr>
+                <td id="ctl00_PlaceHolderMain_doc_head" style="padding-top: 20px;background-color:#4E7AC7;color: white" colspan="2"><b class="sec_head_font">Supporting Artifacts</b></td>
+	
+                </tr>
+                <tr>
+                    <td class="field_txt" colspan="2">
+                <table id="ctl00_PlaceHolderMain_doc_table" style="margin-left: 20px;" data-bind="if: SupportingArtifacts().length" class="companyTable">
+				<thead><tr>
+					<td style="border-bottom-color: gray; border-bottom-width: 1px; border-bottom-style: solid;">Document</td>
+					<td style="border-bottom-color: gray; border-bottom-width: 1px; border-bottom-style: solid;">File Size</td>
+					<td style="border-bottom-color: gray; border-bottom-width: 1px; border-bottom-style: solid;">Date</td>
+				</tr>
+				</thead>
+				<tbody data-bind="foreach: SupportingArtifacts">
+				<tr>
+					<td><a data-bind="attr: { href: url }"><span data-bind="text: name"></span>
+			 </a></td>
+					<td><span data-bind="text: fileSize"></span></td>
+					<td><span  data-bind="spDate:created,dataFormat:'M/D/YYYY'" ></span></td>
+					<td><a href='#' data-bind='click: $root.deleteSupportingArtifact '>Delete</a></td>
+				</tr>
+			</tbody></table>
+	
+                        <span data-bind="visible: !SupportingArtifacts().length">No documents found.</span>
+                    </td>
+                </tr>
+        </tbody></table>
+            <form>
+		     <input id="getSupportingArtifactFile" type="file" style="float: left;">
+		    <p class="help-block"></p><button id="addSupportingArtifactFileButton" style="float:left; position: relative; right: -5px;"
+		      type="button" data-bind='click: $root.uploadSupportingArtifactFile' class="btn btn-default">Upload</button>
+					
+			</form>
+			
+			<!-- Vehicles -->
+			<table style="clear:left; position: relative; top: 10px; " data-bind="with: companyVehicles" class="companyTable" >
+			<tr><td colspan="2" style="padding-right: 4px; background-color:#4E7AC7; color: white">Vehicle</td></tr>
+			<tr>
+				<td >
+			        <table id="ctl00_PlaceHolderMain_user_lst" style="width: 100%;" class="companyTable">
+						<tbody data-bind="foreach: selectedCompanyVehicles">
+						<tr>
+									<td><a href='#'  data-bind='click: $root.companyVehicles.removeCompanyVehicle '>Remove</a></td>
+							<td class="field_txt" data-bind="text: title "></td>
+						</tr>
+					</tbody></table>
+					<div data-bind="visible: availableCompanyVehicles().length">
+								Add Vehicle:	            <select  
+								            data-bind="options: availableCompanyVehicles , optionsText: 'title', value: selectedAvailableCompanyVehicles , optionsCaption: 'Choose...'" 
+								            class="form-control"></select>
+									<button  style="float:left"
+						      type="button" data-bind='click: addCompanyVehicle, enable: selectedAvailableCompanyVehicles ()' 
+						      class="btn btn-default" >Add</button>
+				
+					</div>
+				</td>
+			
+			</tr></table>
+       </div>
+    </div>

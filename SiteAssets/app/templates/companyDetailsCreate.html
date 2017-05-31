@@ -1,0 +1,77 @@
+﻿<div class="centeredHeader">
+	<h1>Corporate Capabilities Overview (New)</h1>
+</div>
+
+<div class="border-line"></div>
+
+<div class="mainSlimBodyDiv">
+
+	<table class="editFormTable">
+    	<tr>
+        	<td>Company Name<span class="accent-text" title="This is a required field.">*</span></td>
+            <td><input  type="text" data-bind="value: $root.createCompanyFields.Title" class="form-control"/></td>
+        </tr>
+            <tr>
+                <td >Short Name  </td>
+                <td ><input  type="text" data-bind="value: $root.createCompanyFields.ShortTitle" class="form-control"/></td>
+            </tr>
+            <tr>
+                <td >Website</td>
+                <td  data-bind="with: createCompanyFields.Website">
+				        URL:   <input  type="text" data-bind="value: url" class="form-control"/><br/>
+				        Description:   <input  type="text" data-bind="value: description" class="form-control"/>
+                </td>
+            </tr>
+            <tr>
+                <td >DUNS<span class="accent-text" title="This is a required field.">*</span></td>
+                <td ><input  type="text" data-bind="value: $root.createCompanyFields.DUNS" class="form-control"/></td>
+            </tr>
+            <tr>
+                <td >CAGE</td>
+                <td ><input  type="text" data-bind="value: $root.createCompanyFields.CAGE" class="form-control"/></td>
+            </tr>
+            <tr>
+                <td>Business Size</td>
+                <td><select data-bind="options: BusinessSizeChoices, value: createCompanyFields.BusinessSize" class="form-control"></select></td>
+            </tr>
+            <tr>
+                <td >Socioeconomic/Disadvantaged Designation</td>
+                <td ><input  type="text" data-bind="value: createCompanyFields.SocioeconomicDisadvantagedDesignation" class="form-control"/></td>
+            </tr>
+            <tr>
+                <td>Headquarters Location</td>
+                <td >
+				    <textarea id="inputHeadquartersLocation" data-bind='value: createCompanyFields.HeadquartersLocation' rows='2' cols='60'  class="form-control" > </textarea></td>	
+            </tr>
+            <tr>
+                <td >Facility Clearance Level</td>
+                <td  ><select data-bind="options: FacilityClearanceLevelChoices, value: createCompanyFields.FacilityClearanceLevel" class="form-control"></select></td>	
+            </tr>
+            <tr>
+                <td >Contractor Level</td>
+                <td  ><select data-bind="options: ContractorLevelChoices, value: createCompanyFields.ContractorLevel" class="form-control"></select></td>	
+            </tr>
+            <tr>
+                <td >Certifications</td>
+                <td ><textarea id="inputCertifications" data-bind='value: createCompanyFields.Certifications' rows='2' cols='60'  class="form-control" > </textarea></td>	
+            </tr>
+            <tr>
+                <td >Technology Partnerships</td>
+                <td ><input  type="text" data-bind="value: createCompanyFields.TechnologyPartnerships" class="form-control"/></td>	
+            </tr>
+            <tr>
+                <td >Corporate Achievements</td>
+                <td ><input  type="text" data-bind="value: createCompanyFields.CorporateAchievements" class="form-control"/></td>	
+            </tr>
+            <tr>
+                <td>Demonstrated Capabilities</td>
+                <td><textarea id="inputDemonstratedCapabilities" data-bind='value: createCompanyFields.DemonstratedCapabilities' rows='2' cols='60'  class="form-control" > </textarea></td>
+            </tr>
+            <tr>
+                <td >Relevant Corporate Experience</td>
+                <td style="max-width: 200px;"><textarea  data-bind='value: createCompanyFields.RelevantExperience'rows='2' cols='60'  class="form-control" > </textarea></td>
+            </tr>
+            
+        </table>
+  	<button class="btn btn-default  btn-success top-buffer bottom-buffer btn-block" type="button" data-bind="click: CreateCompany">Create Company</button>
+ </div>

@@ -1,0 +1,76 @@
+﻿<div class="centeredHeader">
+	<h1>Edit Profile</h1>
+</div>
+
+<div class="border-line"></div>
+
+
+<div class="mainSlimBodyDiv">
+
+
+<table class="editFormTable" data-bind="with: $root.profile.editProfileFields">
+	<tr>
+		<td>Title</td>
+		<td><input  type="text" data-bind="value: Title" class="form-control"/></td>
+	</tr>
+
+	<tr>
+		<td>Name<span class="accent-text" title="This is a required field.">*</span></td>
+		<td><input  type="text" data-bind="value: Name" class="form-control"/></td>	
+	</tr>
+
+	<tr>
+		<td>Company<span class="accent-text" title="This is a required field.">*</span></td>
+		<td><select data-bind="options: $root.profile.availableCompanies, optionsText: 'displayText', value: $root.profile.selectedCompanyForEdit , optionsCaption: 'Choose...'" 
+				class="form-control"></select></td>
+	</tr>
+
+	<tr>
+		<td>Email<span class="accent-text" title="This is a required field.">*</span></td>
+		<td><input  type="text" data-bind="value: Email" class="form-control"/></td>	
+	</tr>
+	
+	<tr>
+		<td>User<span class="accent-text" title="This is a required field.">*</span></td>
+		<td>
+			<form>
+				<div id="ProfileEditUserPeoplePickerDiv"></div>
+			</form>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>Work Phone</td>
+		<td><input  type="text" data-bind="value: WorkPhone " class="form-control"/></td>	
+	</tr>
+	
+	<tr>
+		<td>Mobile Phone</td>
+		<td><input  type="text" data-bind="value: MobilePhone " class="form-control"/></td>
+	</tr>
+	
+	<tr>
+		<td>Email Opportunity Updates</td>
+		<td><input type="checkbox" data-bind="checked: EmailOpportunityUpdates" class="form-control" /><span>Check this box if you would like to receive email updates for new opportunities.</span></td>
+	</tr>
+</table>
+<div class="editFormDivs">
+<div class="row">
+<div class="col-sm-6">
+ 	<button class="btn btn-default btn-success top-buffer bottom-buffer btn-block" type="button" data-bind="click: profile.SaveProfile">Save</button>
+</div>
+
+<div class="col-sm-6">
+ 	<button class="btn btn-default btn-danger top-buffer bottom-buffer  btn-block" type="button" data-bind="click: profile.DeleteProfile">Delete</button>
+</div>
+</div>
+
+<table class="editFormTable">
+	<tr>
+		<td>Created</td><td data-bind="spDate:$root.profile.viewProfileFields.Created,dataFormat:'M/D/YYYY h:mm:ss A [GMT]'"></td>
+		<td>Modified</td><td data-bind="spDate:$root.profile.viewProfileFields.Modified,dataFormat:'M/D/YYYY h:mm:ss A [GMT]'"></td>
+	</tr>
+</table>
+
+
+</div>

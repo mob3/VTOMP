@@ -1,0 +1,59 @@
+﻿<div class="centeredHeader">
+	<h1>Create Profile</h1>
+</div>
+
+<div class="border-line"></div>
+
+<div class="mainSlimBodyDiv">
+  	<table class="editFormTable" data-bind="with: $root.createProfile.editProfileFields">
+		<tr>
+			<td >Title</td>
+			<td><input  type="text" data-bind="value: Title" class="form-control"/></td>
+		</tr>
+		
+		<tr>
+			<td >Name</td>
+			<td><input  type="text" data-bind="value: Name" class="form-control"/></td>
+		</tr>
+		
+		<tr>
+			<td >Email</td>
+			<td><input  type="text" data-bind="value: Email" class="form-control"/></td>
+		</tr>
+		
+		<tr>
+			<td >Work Phone</td>
+			<td><input  type="text" data-bind="value: WorkPhone " class="form-control"/></td>
+		</tr>
+		
+		<tr>
+			<td >Company</td>
+			<td><select data-bind="options: $root.createProfile.availableCompanies, optionsText: 'displayText', value: $root.createProfile.selectedCompanyForEdit , optionsCaption: 'Choose...'" 
+				 class="form-control"></select></td>
+		</tr>
+		
+		<tr>
+			<td>Create User Account?</td>
+			<td><input type="checkbox" /></td>
+		</tr>
+		
+		<tr>
+			<td>User</td>
+			<td>
+				<form>
+					<div id="ProfileCreateUserPeoplePickerDiv"></div>
+				</form>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Mobile Phone</td>
+			<td><input  type="text" data-bind="value: MobilePhone " class="form-control"/></td>
+		</tr>
+		
+	</table>
+
+
+<button class="btn btn-default  btn-success top-buffer bottom-buffer btn-block" type="button" data-bind="click: createProfile.SaveProfile">Create Profile</button>
+
+</div>

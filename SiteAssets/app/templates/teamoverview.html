@@ -1,0 +1,39 @@
+﻿<table class="full_view ProfilesTable" border="1">
+	<thead>
+    <tr>
+        <th colspan="2"><h1 style="margin-left:10px;">Team Members</h1></th>
+        <th style="text-align:center;">POC Name</th>
+        <th style="text-align:center;">Title</th>
+        <th style="text-align:center;">Email</th>
+        <th style="text-align:center;">Work Phone</th>
+        <th style="text-align:center;">Mobile Phone</th>
+    </tr>
+    </thead>
+    <tbody data-bind="foreach: companies">
+         <tr class="row_top">
+			<td class="logo_col" rowspan="2">
+			 	<span data-bind="if: logoUrl"> 
+			 	 	<img id="logo" alt="Logo" data-bind="attr: { src: logoUrl, title: logoUrl }" />
+			 	 </span>
+			 	<span data-bind="ifnot: logoUrl"> 
+			 	 <p>No Logo Found.</p>
+			 	 </span>
+			</td>
+			<td class="comp_col" rowspan="2"><div class="comp_name"><span data-bind="text: name"></span></div>
+			<a data-bind="attr: { href: '#/viewcompany/' + id, title: name }"
+			 >View Capabilities Overview</a></td>
+			<td><span data-bind="text: primaryPOC().name "/></td>
+			<td><span data-bind="text: primaryPOC().title "/></td>
+			<td><span data-bind="text: primaryPOC().email "/></td>
+			<td><span data-bind="text: primaryPOC().workPhone "/></td>
+			<td><span data-bind="text: primaryPOC().mobilePhone "/></td>
+		</tr>
+		<tr class="row_bot">
+							<td><span style="font-weight: normal;" data-bind="text: secondaryPOC().name "/></td>
+							<td><span data-bind="text: secondaryPOC().title "/></td>
+							<td><span data-bind="text: secondaryPOC().email "/></td>
+							<td><span data-bind="text: secondaryPOC().workPhone "/></td>
+							<td><span data-bind="text: secondaryPOC().mobilePhone "/></td>
+						</tr>
+	</tbody>   
+</table>

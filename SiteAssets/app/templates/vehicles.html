@@ -1,0 +1,57 @@
+﻿
+<h1>Vehicles</h1>
+<div class="mainBodyDiv">
+<div class="row">
+  <div class="col-md-2">
+  	<table id="vehiclesList" class="vehiclesTable" data-bind="with: $root.vehicles" >
+		<thead>
+    		<tr>
+        		<th class="table-sort-ui">ID</th>
+        		<th class="table-sort-ui">Vehicle</th>
+    		</tr>
+    	</thead>
+    	<tbody data-bind="foreach: vehicleList">
+         <tr>
+			<td class="table-sort-ui" data-bind="text:id"></td>
+			<td class="table-sort-ui"><a style="cursor:pointer" data-bind="click: $root.vehicles.editVehicle, text:title"></a></td>
+			</tr>
+		</tbody>   
+	</table>
+
+  </div>
+  <div class="col-md-8">
+  <div class="vehiclesData">		 
+		
+		 	
+		<table class="vehiclesTitle" data-bind="with: $root.vehicles.selectedVehicle()">
+		<tr>
+			<td>Id</td><td data-bind="text: id"></td>
+			<td>Title</td><td><input  type="text" data-bind="value: title" class="form-control"/></td>
+			<td>AlwaysCC</td><td><input type="text" data-bind="value: cc" class="form-control" /></td>
+		</tr>
+		</table>
+		
+		
+		<table class="vehiclesInfo">
+		<tr>
+			<td>Created</td><td data-bind="spDate:$root.vehicles.selectedVehicle().created(),dataFormat:'M/D/YYYY h:mm:ss A [GMT]'"></td>
+			<td>Modified</td><td data-bind="spDate:$root.vehicles.selectedVehicle().modified(),dataFormat:'M/D/YYYY h:mm:ss A [GMT]'"></td>
+		</tr>
+		
+		</table>
+		
+	</div>
+
+  </div>
+  
+  <div class="col-md-2">
+  	<div class="editFormDivs" style="width:100%">
+		 	<button class="btn btn-default  btn-block" type="button" data-bind="click: vehicles.SaveVehicle">Save</button>
+		 	<button class="btn btn-default  top-buffer bottom-buffer btn-block" type="button" data-bind="click: vehicles.CreateVehicle">New</button>
+		 	<button class="btn btn-default  btn-block" type="button" data-bind="click: vehicles.DeleteVehicle">Delete</button>
+	</div>
+  </div>
+
+</div>
+	
+</div>

@@ -1,0 +1,145 @@
+﻿<!-- HTML for viewCompany -->
+<h1 style="height: 75px;">Corporate Capabilities Overview 
+	<!-- Company Logo -->
+	<span data-bind="if: viewCompanyFields.logoUrl" > 
+		<img id="teamlogo" alt="Logo" data-bind="attr: { src: viewCompanyFields.logoUrl, title: viewCompanyFields.logoUrl }" 
+			style="float: right; max-height: 50px; max-width:150px;"/>
+	</span>
+	<span data-bind="ifnot: viewCompanyFields.logoUrl" style="float: right; max-height: 50px; max-width:150px;"> 
+		<p><b>No Logo Found.</b></p>
+	</span>
+</h1>
+<div class="border-line"></div>
+<div class="float_wrapper">
+	<!-- Corporate Information Table -->
+    <table class="companyTable" class="sec_head_left" style="float: left; width: 45%;">
+         <tbody><tr>
+            <td colspan="2" style="background-color:#4E7AC7;color: white;"><b class="sec_head_font">Corporate Information</b></td>
+        </tr>
+            <tr>
+            <td class="field_lbl" style="margin-right: 15px;">Company Name </td>
+            <td class="field_txt" data-bind="text:$root.viewCompanyFields.Title"></td>
+	
+        </tr>
+        <tr>
+            <td class="field_lbl">Website</td>
+            <td class="field_txt"  data-bind="with: viewCompanyFields.Website">
+				<a data-bind="attr: { href: url, title: description }, text: url"></a>
+            </td>
+        </tr>
+        <tr>
+            <td class="field_lbl">DUNS</td>
+            <td class="field_txt" data-bind="text:$root.viewCompanyFields.DUNS"></td>
+        </tr>
+        <tr>
+            <td class="field_lbl">CAGE</td>
+            <td class="field_txt" data-bind="text:$root.viewCompanyFields.CAGE"></td>
+        </tr>
+        <tr>
+            <td class="field_lbl">Business Size</td>
+            <td class="field_txt" data-bind="text:$root.viewCompanyFields.BusinessSize"></td>
+        </tr>
+        <tr>
+            <td class="field_lbl">Socioeconomic/Disadvantaged Designation</td>
+            <td class="field_txt" data-bind="text:$root.viewCompanyFields.SocioeconomicDisadvantagedDesignation"></td>
+        </tr>
+        <tr>
+            <td class="field_lbl">Headquarters Location</td>
+            <td class="field_txt" data-bind="text:$root.viewCompanyFields.HeadquartersLocation"></td>	
+        </tr>
+        <tr>
+            <td class="field_lbl">Facility Clearance Level</td>
+            <td class="field_txt" data-bind="text:$root.viewCompanyFields.FacilityClearanceLevel"></td>	
+        </tr>
+        <tr>
+            <td class="field_lbl">Certifications</td>
+            <td class="field_txt" data-bind="text:$root.viewCompanyFields.Certifications"></td>	
+        </tr>
+        <tr>
+            <td class="field_lbl">Technology Partnerships</td>
+            <td class="field_txt" data-bind="text:$root.viewCompanyFields.TechnologyPartnerships"></td>	
+        </tr>
+        <tr>
+            <td class="field_lbl">Corporate Achievements</td>
+            <td class="field_txt" data-bind="text:$root.viewCompanyFields.CorporateAchievements"></td>	
+        </tr>
+        <tr>
+            <td class="field_lbl" style="padding-top: 20px; max-width: 200px;"><b class="sec_head_font">Demonstrated Capabilities</b></td>
+            <td class="field_txt" style="max-width: 200px;">
+                <div data-bind="spMultiLineWithBreaks : viewCompanyFields.DemonstratedCapabilities"></div>
+            </td>
+        </tr>
+        <tr>
+            <td class="field_lbl">Relevant Corporate Experience</td>
+            <td class="field_txt" style="max-width: 200px;">
+                <div data-bind="spMultiLineWithBreaks : viewCompanyFields.RelevantExperience"></div>
+            </td>
+         </tr>
+        </tbody>
+	</table>
+<div class="sec_head_right" style="float: right;">
+<!-- Points of contact Table -->
+<table id="ctl00_PlaceHolderMain_user_lst" style="width: 100%; float: right;" class="companyTable">
+	<thead>
+		<tr>
+			<td colspan="5">
+					<p><b class="sec_head_font" >Points of Contact</b></p>
+			</td>
+		</tr>
+		<tr>
+			<td class="field_lbl">
+				<span id="ctl00_PlaceHolderMain_user_lbl">Name</span>
+			</td>
+			<td class="field_lbl">
+				<span id="ctl00_PlaceHolderMain_role_lbl">Title</span>
+			</td>
+			<td class="field_lbl">
+				<span id="ctl00_PlaceHolderMain_email_lbl">Email</span>
+			</td>
+			<td class="field_lbl">
+				<span id="ctl00_PlaceHolderMain_work_lbl">Work Phone</span>
+			</td>
+			<td class="field_lbl">
+				<span id="ctl00_PlaceHolderMain_mobile_lbl">Mobile Phone</span>
+			</td>
+		</tr>
+	</thead>
+	<tbody data-bind="foreach: selectedCompanyPOCs">
+		<tr>
+			<td class="field_txt" data-bind="text: name "></td>
+			<td class="field_txt" data-bind="text: title "></td>
+			<td class="field_txt" data-bind="text: email "></td>
+			<td class="field_txt" data-bind="text: workPhone "></td>
+			<td class="field_txt" data-bind="text: mobilePhone "></td>
+		</tr>
+	</tbody>
+</table>
+<!-- Supporting Artifacts Table -->
+<table>
+    <tbody><tr>
+		<td id="ctl00_PlaceHolderMain_doc_head" style="padding-top: 20px;background-color:#4E7AC7;color: white;" colspan="2"><b class="sec_head_font">Supporting Artifacts</b></td>
+    </tr>
+     <tr>
+        <td class="field_txt" colspan="2">
+        <table id="ctl00_PlaceHolderMain_doc_table" style="margin-left: 20px;" data-bind="if: SupportingArtifacts().length">
+			<thead>
+				<tr>
+					<td style="border-bottom-color: gray; border-bottom-width: 1px; border-bottom-style: solid;">Document</td>
+					<td style="border-bottom-color: gray; border-bottom-width: 1px; border-bottom-style: solid;">File Size</td>
+					<td style="border-bottom-color: gray; border-bottom-width: 1px; border-bottom-style: solid;">Date</td>
+				</tr>
+			</thead>
+			<tbody data-bind="foreach: SupportingArtifacts">
+			<tr>
+				<td><a data-bind="attr: { href: url }"><span data-bind="text: name"></span></a></td>
+				<td><span data-bind="text: fileSize"></span></td>
+				<td><span  data-bind="spDate:created,dataFormat:'M/D/YYYY'" ></span></td>
+			</tr>
+			</tbody>
+		</table>
+		<span data-bind="visible: !SupportingArtifacts().length">No documents found.</span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>

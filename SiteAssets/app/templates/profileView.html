@@ -1,0 +1,51 @@
+﻿<h1>Profile</h1>
+<div class="border-line"></div>
+<div class="row">
+<div class="col-sm-6">
+
+<dl class="cf" data-bind="with: $root.profile.viewProfileFields">
+
+	<dt>Profile Id</dt>
+		<dd data-bind="text: $root.profile.profileId"></dd>
+		
+	<dt>Title</dt>
+		<dd data-bind="text: Title"></dd>
+
+	<dt>Name</dt>
+		<dd><a data-bind="attr: { href: nameLink, title: Email}, text: Name"></a></dd>
+		
+	<dt>Company</dt>
+		<dd data-bind="text: $root.profile.selectedCompanyForRead().title  "></dd>
+
+	<dt>Email</dt>
+		<dd data-bind="text: Email"></dd>
+		
+	<dt>User</dt>
+		<dd data-bind="text: $root.profile.profileUser().getFullName() "></dd>
+
+	<dt>Work Phone</dt>
+		<dd data-bind="text: WorkPhone "></dd>
+		
+	<dt>Mobile Phone</dt>
+		<dd data-bind="text: MobilePhone "></dd>
+
+	<dt>Vehicle</dt>
+		<dd colspan="3" data-bind="text: Vehicles "></dd>
+
+	<dt>Created</dt>
+		<dd data-bind="spDate:Created,dataFormat:'M/D/YYYY h:mm:ss A [GMT]'"></dd>
+	<dt>Modified</dt>
+		<dd data-bind="spDate:Modified,dataFormat:'M/D/YYYY h:mm:ss A [GMT]'"></dd>
+
+</dl>
+
+</div>
+
+<div class="col-sm-6">
+
+</div>
+
+</div>
+
+
+

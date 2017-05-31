@@ -1,0 +1,493 @@
+﻿label{margin-left: 20px; width: 80%}
+#datepicker{width:180px; margin: 0 20px 20px 20px;}
+#datepicker > span:hover{cursor: pointer;}
+
+#resultsNote {
+	left: 0;
+	right: 0;
+	background: #fde073;
+    text-align: center;
+    line-height: 2.5;
+}
+
+#loadingContainer {
+	left: 10px;
+	background: #e6e6ff;
+	border-radius: 0 0 2px 2px;
+}
+
+#resultsNote, #loadingContainer {
+    position: fixed;
+    z-index: 101;
+    top: 52px;
+    overflow: hidden; 
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+}
+
+.vehicle-header {
+	text-align:center;
+}
+
+.top-buffer { margin-top:8px !important; }
+.bottom-buffer { margin-bottom:8px; }
+.odd-color {
+	 background-image: linear-gradient(to bottom, #18384A, #1E465C, #1E465C);
+}
+.even-color {
+	background-image: linear-gradient(to bottom, #18384A, #1E465C, #1E465C);
+}
+.odd-color, .even-color {
+	color: #FFF;
+	 padding: 6px;
+}
+
+/*DL, DT, DD TAGS LIST DATA*/
+dl.cf {
+    margin-bottom:50px;
+}
+ 
+dl.cf dt {
+    background:#5f9be3;
+    color:#fff;
+    float:left; 
+    clear: left;
+    font-weight:bold; 
+    margin-right:10px; 
+    padding:5px;  
+    width:16em; 
+    white-space: nowrap;
+}
+ 
+dl.cf dd {
+    margin:3px 0; 
+    padding-top:7px;
+    background: #eee;
+    color: #000;
+}
+dl.cf dd { .clearfix();}
+
+dl.cf > dd:after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+  
+#profilesList table, #contractsList table {
+	width:100%;
+}
+
+.editFormTable, .editFormDivs {
+	width:100%;
+}
+.editFormTable td {
+	padding:6px;
+}
+
+html,body, body > #vmform1 {
+	height:99%; margin: 0; padding: 0;
+}
+#form1{ height: 100%; margin: 0; padding: 0; }
+#form1 > #mainContent{ height: auto; min-height: 100%; }
+#content { padding-bottom: 3em; }
+#footer { clear: both; position: relative; z-index: 10; height: 3em; margin-top: -3em; }
+.clearfix {
+  overflow: auto;
+}
+
+
+
+/************************ David's additions ***************************/
+
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+    overflow-y: scroll;
+   	padding: 0px !important;
+	font-family: Titillium Web;
+}
+
+.navbar-default {
+	background-image: linear-gradient(to bottom, #FFF, #FFF);
+	margin-bottom: 3px;
+	box-shadow: 0px 2px 12px 0px rgba(35, 53, 152, 1);
+}
+
+.nav a {
+	font-size: 16px;
+	font-weight: 500;
+	color: #1E465C;
+	box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.3) inset;
+	
+}
+
+td a {
+	color: #38ACE4;
+}
+
+td a:hover {
+	color: #289F12;
+}
+
+td a:visited {
+	color: #A72B93;
+}
+
+td:first-child {
+	font-weight: bold;
+}
+
+table {
+	border-bottom: 1px solid black !important;
+}
+
+/* Table for edit/view company details */
+.companyTable td {
+	padding-bottom: 2px;
+	padding-top: 2px;
+	border-bottom: 1px solid black;
+}
+
+
+table tr {
+	background-color: rgba(0,0,0,0) !important;
+	box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.3) inset !important;
+	padding: 2px !important;
+	border-bottom: 1px solid black !important;
+}
+
+
+.dataTable th, .dataTable td {
+	box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.3) inset;
+	border-bottom: 1px solid black;
+}
+
+div#content {
+	padding: 0px 20px 50px 20px;}
+
+input[type="checkbox"].btn {
+	margin-bottom: 5px;
+	margin-left: 15px;
+}
+
+
+dl.cf  > dt {
+	background-color: #4E7AC7;
+	border: 2px solid #EEE;
+
+	}
+
+
+
+/* Title Area */
+#TitleZone {
+	position: relative;
+	z-index: 1;
+	background-color: #FFF;
+	background-image: linear-gradient(to top, #DFF4FF 0%, #FFFEFF 62.21%, #FFFEFF 100%);
+	box-shadow: 0px -2px 0px #FFF inset;
+}
+
+.vmain {
+	padding-left: 2%;
+	padding-right: 2%;
+	margin: 0px auto;
+	max-width: 1020px;
+	min-width: 305px;
+}
+
+.vtitle {
+	padding: 20px 0px;
+	position: relative;
+	overflow: hidden;
+	color: #1E465C;
+	display: table;
+	width: 100%;
+}
+
+.vtitle .logo {
+	width: 30% !important;
+}
+
+.vtitle > div {
+	display: table-cell;
+}
+
+.vtitle .logo img {
+	max-width: 100%;
+	transition: all 0.5s ease 0s;
+}
+
+img {
+	border: medium none;
+}
+
+.vtitle .tagLine {
+	width: 70%;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 1.8em;
+	font-weight: 600;
+}
+
+.vtitle .right-info {
+	width: 30%;
+}
+
+.vtitle .contact-info {
+	padding: 0px;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.2em;
+}
+
+.vtitle .contact-info a {
+	color: #4098C3;
+	font-size: 28px;
+}
+
+a.phone-link {
+	cursor: default;
+	font-family: Arial;
+}
+
+.vtitle .right-info > * {
+	border: medium none;
+	float: right;
+	transition: all 0.5s ease 0s;
+}
+
+.logo{
+	width: 100%;
+}
+
+.brand-logo{
+	padding: 6px 0px 0px 15px;
+}
+
+.no-radius{
+	border-radius: 0px;
+}
+
+.site-title{
+	font-size:14px;
+	color: rgba(35, 53, 152, 1) !important;
+	padding: 2px 10px;
+	margin: 12px 25px 7px 20px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+    border: 1px solid #4E7AC7;
+}
+
+.site-title:hover{
+	text-decoration:none;
+}
+
+.site-title2{
+	font-size:14px;
+	text-decoration: none;
+	color: #FFF !important;
+	background: #4E7AC77; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, #35478C, #7FB2F0); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #35478C, #7FB2F0); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #35478C, #7FB2F0); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, #35478C, #7FB2F0); /* Standard syntax */
+	padding: 6px 10px;
+	margin: 0px 20px 0px 20px;
+	-webkit-border-radius: 0px 0px 8px 8px;
+}
+
+.mainContent{
+	margin-top: 50px;
+	background: #1a2980;
+	background-image: -webkit-radial-gradient(closest-corner,rgba(16,47,70,0) 60%,rgba(16,47,70,.26)),-webkit-linear-gradient(108deg,#26d0ce,#1a2980 90%);
+	background-image: -ms-radial-gradient(closest-corner,rgba(16,47,70,0) 60%,rgba(16,47,70,.26)),-ms-linear-gradient(108deg,#26d0ce,#1a2980 90%);
+	color: white;
+
+}
+
+.sub-menu{
+	background-color: #4E7AC7;
+	padding-left: 5%;
+}
+
+.mainBodyDiv{
+	padding: 20px;
+    background-color: rgb(255, 255, 255);
+    color: #000; 
+	
+}
+
+.centeredHeader{
+	text-align:center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mainSlimBodyDiv{
+	padding: 20px;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+    background-color: rgb(255, 255, 255);
+    color: #000; 
+}
+
+
+
+.breadcrumb{
+	border-radius: 0px;
+	background-image:url('grey.png');
+}
+
+thead tr:first-child{
+	background-color:#4E7AC7 !important;
+	color: #FFF;
+}
+
+tr:nth-child(even){
+	background-color:#fff !important;
+	color: black; 
+}
+
+tr:nth-child(odd){
+	background-color:#f2f2f2 !important;
+	color: black; 
+}
+
+/* Vehicles Page */
+.vehiclesTable{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.vehiclesThead{
+	padding: 5px;
+}
+
+.vehiclesData{
+	display: inline-block; 
+	width: 100%; 
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.vehiclesTitle{
+	width:100%; 
+	padding:6px;
+}
+
+.vehiclesInfo{
+	width:100%; 
+	padding:6px; 
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+	.site-title{
+		display: none;
+	}
+
+	.mainSlimBodyDiv{
+		width: 95% !important;
+	}
+	
+	td{
+		display:block; 	
+		text-align:center;
+	}
+	
+	td:first-child{
+		background-color:#35478C;
+		color:#FFF;
+	}
+	
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.ProfilesTable td:nth-of-type(1):before { content: "ID: "; font-weight:bold; }
+	.ProfilesTable td:nth-of-type(2):before { content: "Title: "; font-weight:bold; }
+	.ProfilesTable td:nth-of-type(3):before { content: "Name: "; font-weight:bold; }
+	.ProfilesTable td:nth-of-type(4):before { content: "Last Modified: "; font-weight:bold; }
+	.ProfilesTable td:nth-of-type(5):before { content: "Company: "; font-weight:bold; }
+	.ProfilesTable td:nth-of-type(6):before { content: "Email: "; font-weight:bold; }
+	
+	.ProfilesTable td{
+		text-align: left;
+	}
+	
+	.ContractsTable td:nth-of-type(1):before { content: "ID: "; font-weight:bold; }
+	.ContractsTable td:nth-of-type(2):before { content: "Solicitation Number: "; font-weight:bold; }
+	.ContractsTable td:nth-of-type(3):before { content: "Contract: "; font-weight:bold; }
+	.ContractsTable td:nth-of-type(4):before { content: "Last Modified: "; font-weight:bold; }
+	.ContractsTable td:nth-of-type(5):before { content: "Customer: "; font-weight:bold; }
+	.ContractsTable td:nth-of-type(6):before { content: "Status: "; font-weight:bold; }
+	
+	.ContractsTable td{
+		text-align:left;
+	}
+		
+	dl.cf > dt{
+		width: 100%;
+	}
+	
+	dl.cf dd{
+		padding-left: 5px;
+		padding-bottom: 3px;
+		margin: 10px 0;
+		}
+
+}
+
+.responsive-nav-button{
+	min-width: inherit;
+}
+
+/* View Opportunities Page */
+
+.ForumComment{
+	color: #000;
+	width: 90%;
+}
+
+.SubmitCommentButton{
+	margin-top: 10px;
+	margin-left: 0px !important;
+}
+
+/* Edit Profiles Page */
+
+.blue-border{
+	border-left:thin #4E7AC7 dashed;
+	border-right:thin #4E7AC7 dashed;
+	border-bottom:thin #4E7AC7 dashed;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.bottom-buffer-vehicle{
+	margin-bottom: 30px;
+}
+
+.vehicle-title{
+	background-color: #4E7AC7;
+	color:#FFF;
+	text-align:center;
+	padding: 5px;
+	margin-top: 20px;
+
+}
+
+/* Red Accent for Required Fields */
+.accent-text {
+	color: red;
+}
+/*<span class="accent-text" title="This is a required field.">*</span>*/
+
+

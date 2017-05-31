@@ -1,0 +1,303 @@
+﻿<div class="centeredHeader">
+	<h1>Create Opportunity</h1>
+</div>
+
+<div class="border-line"></div>
+
+ 	<div class="container" data-bind="with: $root.createContract">
+ 	<button class="btn btn-default  top-buffer bottom-buffer" type="button" data-bind="click: SaveContract">Save</button>
+  	<div class="row">
+		<div class="col-md-5">
+		     <div class="row">
+		        <div class="col-md-12 top-buffer">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6 odd-color">
+			        		<label for="inputTitle" class="control-label">Title<span class="accent-text" title="This is a required field.">*</span> </label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 odd-color">
+				            <input type="text" id="inputTitle" data-bind="value: editFields.Title"  class="form-control"/>
+				        </div>
+				    </div>
+				</div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row even-color">
+				        <div class="col-sm-4 col-xs-6 even-color">
+			        		<label for="inputSolicitationNumber" class="control-label">Solicitation Number</label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 even-color">
+				            <input id="inputSolicitationNumber" type="text" data-bind="value: editFields.SolicitationNumber" class="form-control"/>
+				        </div>
+				    </div>
+				</div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6 odd-color">
+			        		<label for="inputCustomer" class="control-label">Customer </label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 odd-color">
+				            <input id="inputCustomer" type="text" data-bind="value: editFields.Customer" class="form-control"/>
+				        </div>
+				    </div>
+				</div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row even-color">
+				        <div class="col-sm-4 col-xs-6 even-color">
+			        		<label for="inputStatus" class="control-label">Tracking Status</label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 even-color">
+				            <select for="inputStatus" data-bind="options: TrackingStatusChoices, value: editFields.TrackingStatus" class="form-control"></select>
+				        </div>
+				    </div>
+				</div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6 odd-color">
+			        		<label for="inputTeamingStatus" class="control-label">Teaming Status<span class="accent-text" title="This is a required field.">*</span></label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 odd-color">
+				            <select id="inputTeamingStatus" data-bind="options: TeamingStatusChoices, value: editFields.TeamingStatus" class="form-control"></select>
+				        </div>
+				    </div>
+				</div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row even-color">
+				        <div class="col-sm-4 col-xs-6 even-color">
+			        		<label for="inputClearanceRequirement" class="control-label">Clearance Requirement</label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 even-color">
+				            <select id="inputClearanceRequirement" data-bind="options: ClearanceRequirementChoices, value: editFields.ClearanceRequirement" class="form-control"></select>
+				        </div>
+				    </div>
+				</div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6 odd-color">
+			        		<label for="inputDueDate" class="control-label">Due Date</label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 odd-color">
+				            <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+							    <input id="inputDueDate" type="text" readonly="readonly"  data-date-format="mm-dd-yyyy"
+							    class="datepicker" 
+							    data-bind="datepicker: editFields.DueDate" class="form-control" />
+    						</div>
+				        </div>
+				    </div>
+				</div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row even-color">
+				        <div class="col-sm-4 col-xs-6 even-color">
+			        		<label class="control-label">Program Manager </label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 even-color">
+				            <form>
+							    <div id="NewContractProgramManagerPeoplePickerDiv"></div>
+							</form>
+				        </div>
+				    </div>
+				</div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6 odd-color">
+			        		<label class="control-label">Teaming Coordinator </label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 odd-color">
+				            <form>
+							    <div id="NewContractTeamingCoordinatorPeoplePickerDiv"></div>
+							</form>
+				        </div>
+				    </div>
+				</div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row even-color">
+				        <div class="col-sm-4 col-xs-6 even-color">
+			        		<label class="control-label">Capture Manager </label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 even-color">
+				            <form>
+							    <div id="NewContractCaptureManagerPeoplePickerDiv"></div>
+							</form>
+				        </div>
+				    </div>
+				</div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6 odd-color">
+			        		<label for="inputDescription" class="control-label">Opportunity Synopsis </label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 odd-color">
+				            <textarea id="inputDescription" data-bind='value: editFields.Description' rows='2' cols='60'  class="form-control" > </textarea>
+				        </div>
+				    </div>
+				</div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row even-color">
+				        <div class="col-sm-4 col-xs-6 even-color">
+			        		<label class="control-label">Vehicle<span class="accent-text" title="This is a required field.">*</span></label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 even-color">
+				            <select  
+				            data-bind="options: availableVehicles , optionsText: 'title', value: selectedVehicleForEdit  " 
+				            class="form-control"></select>
+				        </div>
+				    </div>
+				</div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6 odd-color">
+			        		<label for="inputDescription" class="control-label">Email Note</label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 odd-color">
+				            <textarea id="inputDescription" data-bind='value: editFields.EmailNote' rows='2' cols='60'  class="form-control" > </textarea>
+				        </div>
+				    </div>
+				</div>
+	    	</div><!--row-->
+		</div>
+		<div class="col-md-6 col-md-offset-1">
+		     <div class="row">
+		        <div class="col-md-12">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6 odd-color">
+			        		<label for="inputContractTypes" class="control-label">Set-Aside/Competition Pool</label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 odd-color">
+				            <select id="inputContractTypes" data-bind="options: CompetitionTypeChoices, selectedOptions: editFields.CompetitionType"
+				             size="8" multiple="true"  class="form-control"></select>
+				        </div>
+				    </div>
+				</div>
+				
+		        <div class="col-md-12 top-buffer">
+				    <div class="row even-color">
+				        <div class="col-sm-4 col-xs-6">
+			        		<label for="inputCustomerAgency" class="control-label">Customer Agency</label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6">
+				            <input  data-bind='value: editFields.CustomerAgencyShort' type="text" id="inputCustomerAgency"
+				            class="form-control"  placeholder="Customer Agency">
+				        </div>
+			        </div>
+		        </div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6">
+			        		<label for="inputPartnerResponseNeededBy" class="control-label">Partner Response Needed By </label>
+			        	</div>
+						<div class="col-sm-8 col-xs-6 odd-color">
+				            <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+							    <input id="inputDueDate" type="text" readonly="readonly"  data-date-format="mm-dd-yyyy"
+							    class="datepicker" 
+							    data-bind="datepicker: editFields.PartnerResponseNeededBy" class="form-control" />
+    						</div>
+				        </div>
+			        </div>
+		        </div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row even-color">
+				        <div class="col-sm-4 col-xs-6">
+			        		<label for="inputReferenceNumber" class="control-label">Reference Number</label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6">
+				            <input  data-bind='value: editFields.ReferenceNumber' type="text" id="inputReferenceNumber"
+				            class="form-control"  placeholder="Reference Number">
+				        </div>
+			        </div>
+		        </div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6">
+			        		<label for="inputTypeofSolicitation" class="control-label">Type of Solicitation</label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6">
+				            <input  data-bind='value: editFields.TypeofSolicitation' type="text" id="inputTypeofSolicitation"
+				            class="form-control"  placeholder="Type of Solicitation">
+				        </div>
+			        </div>
+		        </div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row even-color">
+				        <div class="col-sm-4 col-xs-6">
+			        		<label for="inputProjectStart" class="control-label">Project Start </label>
+			        	</div>	
+						<div class="col-sm-8 col-xs-6 odd-color">
+				            <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+							    <input id="inputDueDate" type="text" readonly="readonly"  data-date-format="mm-dd-yyyy"
+							    class="datepicker" 
+							    data-bind="datepicker: editFields.ProjectStart" class="form-control" />
+    						</div>
+				        </div>
+			        </div>
+		        </div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row even-color">
+				        <div class="col-sm-4 col-xs-6">
+			        		<label for="inputProjectEnd" class="control-label">Project End </label>
+			        	</div>
+						<div class="col-sm-8 col-xs-6 odd-color">
+				            <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+							    <input id="inputDueDate" type="text" readonly="readonly"  data-date-format="mm-dd-yyyy"
+							    class="datepicker" 
+							    data-bind="datepicker: editFields.ProjectEnd" class="form-control" />
+    						</div>
+				        </div>
+			        </div>
+		        </div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6">
+			        		<label for="inputPlaceofPerformance" class="control-label">Place of Performance</label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6">
+				            <input  data-bind='value: editFields.PlaceofPerformance' type="text" id="inputPlaceofPerformance"
+				            class="form-control"  placeholder="Place of Performance">
+				        </div>
+			        </div>
+		        </div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6">
+			        		<label for="inputLOEEstimate" class="control-label">LOE Estimate</label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6">
+				            <input  data-bind='value: editFields.LOEEstimate' type="text" id="inputLOEEstimate"
+				            class="form-control"  placeholder="LOE Estimate">
+				        </div>
+			        </div>
+		        </div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6">
+			        		<label for="inputIncumbentContractors" class="control-label">Incumbent Contractors </label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6">
+				            <input  data-bind='value: editFields.IncumbentContractors' type="text" id="inputIncumbentContractors"
+				            class="form-control"  placeholder="Incumbent Contractors">
+				        </div>
+			        </div>
+		        </div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row odd-color">
+				        <div class="col-sm-4 col-xs-6">
+			        		<label for="inputDateReleased" class="control-label">Date Released </label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6">
+				            <input  data-bind='value: editFields.DateReleased' type="text" id="inputDateReleased"
+				            class="form-control"  placeholder="Date Released">
+				        </div>
+			        </div>
+		        </div>
+		        <div class="col-md-12 top-buffer">
+				    <div class="row even-color">
+				        <div class="col-sm-4 col-xs-6 even-color">
+			        		<label for="EmailToTeam" class="control-label">Email To Team</label>
+			        	</div>
+				        <div class="col-sm-8 col-xs-6 even-color">
+				            <select id="EmailToTeam" data-bind="options: EmailToTeamChoices, value: editFields.EmailToTeam" class="form-control"></select>
+				        </div>
+				    </div>
+				</div>
+	    	</div><!--row-->
+	 	</div>
+	</div>
+ 	<button class="btn btn-default top-buffer" type="button" data-bind="click: SaveContract">Save</button>
+	</div><!-- container -->

@@ -1,0 +1,29 @@
+﻿<table id="companiesList" class=" full_view table CompaniesList" ><!--table-sort-search-->
+	<thead>
+    <tr>
+        <th class="table-sort">ID</th>
+        <th class="table-sort">Company</th>
+        <th class="table-sort">Short Name</th>
+        <th class="table-sort">Website</th>
+        <th class="table-sort">Size</th>
+        <th class="table-sort">DUNS</th>
+        <th class="table-sort">Headquarters</th>
+    </tr>
+    </thead>
+    <tbody data-bind="foreach: listViewCompanies ">
+         <tr>
+			<td   data-bind="text:Id"></td>
+			<td><a data-bind="attr: { href: '#/editcompany/' + Id, title: Title}, text:Title"
+			 ></a></td>
+			<td><a data-bind="attr: { href: '#/editcompany/' + Id, title: ShortTitle}, text:ShortTitle"
+			 ></a></td>
+			<td   data-bind="with: Website">
+					<a data-bind="attr: { href: url, title: description }, text: description">
+					</a>
+                </td>
+			<td   data-bind="text:BusinessSize"></td>
+			<td  data-bind="text:DUNS"></td>
+			<td  data-bind="text:HeadquartersLocation"></td>
+		</tr>
+	</tbody>   
+</table>

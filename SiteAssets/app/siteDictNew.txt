@@ -1,0 +1,75 @@
+{"fieldDict" : 
+	{
+	 "TrackingStatus" : "Status"
+	, "WorkPhone": "Telephone" 
+	, "Email": "Email0" 
+	, "User": "Email" 
+	, "MobilePhone": "Mobile_x0020_Phone" 
+	, "Company": "Company" 
+	, "CustomerAgencyShort": "Customer_x0020_Agency_x0020_Shor"
+	, "PartnerResponseNeededBy": "Respond_x0020_to_x0020_GD_x0020_"
+	, "ReferenceNumber" : "V_x002d_ID"
+	, "TeamingStatus" : "Teaming_x0020_Status"
+	, "TypeofSolicitation" : "Solicitation_x0020_Type"
+	, "ProjectStart" : "P_x002d_Start"
+	, "ProjectEnd" : "Project_x0020_End"
+	, "PeriodofPerformance" : "Project_x0020_Duration"
+	, "PlaceofPerformance" : "Location_x0020_of_x0020_Work"
+	, "LOEEstimate" : "Likely_x0020_Mean_x0020_FTE"
+	, "IncumbentContractors": "Incumbency"
+	, "DateReleased" : "Issued"
+	, "ClearanceRequirement" : "Security"
+	, "ProgramManager" : "Program_x0020_Manager"
+	, "CaptureManager" : "Other_x0020_POC_x0020_1"
+	, "TeamingCoordinator" : "Contract_x0020_Administrator"
+	, "CompetitionType" : "Contract_x0020_Type"
+	, "SolicitationNumber" : "TO_x0023_"
+	, "DueDate" : "RFI_x0020_Submission_x0020_Due_x"
+	, "Vehicle" : "Contract" 
+	, "Contract" : "Opportunity" 
+	,"Name": "Name" 
+	,"PreStatus": "PreStatus"  
+	,"EmailToTeam": "Publish_x0020_to_x0020_Team_x003"
+	,"EmailNote":"Email_x0020_Note"
+	,"EmailOpportunityUpdates":"EmailOpportunityUpdates"
+	,"Opportunity":"Opportunity"
+	}
+,
+"listDict" : 
+	{
+	"Vehicles": "Contracts" 
+	, "Contracts": "Opportunities" 
+	, "Companies": "Companies"
+	, "Profiles": "Profiles"
+	, "RelProfilesCompanies": "RelProfilesCompanies"
+	}
+,"groupDict" : 
+	{
+	"Admins": "Admins" 
+	}
+,"companyFieldsDict": 
+	{
+	"ShortTitle": "Short_x0020_Title" 
+	,"BusinessSize": "Business_x0020_Type"
+	,"CAGE": "CAGE_x0020_Code"
+	,"Certifications": "Certifications"
+	,"ContractorLevel": "Contractor_x0020_Level"
+	,"CorporateAchievements": "Corporate_x0020_Achievements"
+	,"DemonstratedCapabilities": "DHS_x0020_Related_x0020_Capabili"
+	,"DHSComponentExperience": "DHS_x0020_Component_x0020_Experi"
+	,"DUNS": "DUNS"
+	,"FacilityClearanceLevel": "Facilities_x0020_with_x0020_Clea"
+	,"Group": "Group"
+	,"HeadquartersLocation": "Headquarters_x0020_Location"
+	,"RelevantExperience": "Relevant_x0020_Experience"
+	,"SocioeconomicDisadvantagedDesignation": "Socioeconomic_x002f_Disadvantage"
+	,"TechnologyPartnerships": "Technology_x0020_Partnerships"
+	,"Website": "Website"
+	}
+,"folderPaths" :
+	{
+	"GovernmentDocuments": "Government Documents"
+	, "Logos": "Logos" 
+	, "SupportingArtifacts": "Company Documents" 
+	}
+}

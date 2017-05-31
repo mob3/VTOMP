@@ -1,0 +1,85 @@
+﻿<h1>Opportunities</h1>
+    <div class="border-line"></div>
+ 	<div class="row">
+		<div class="col-sm-6">
+ 	<dl class="cf">
+	<dt>VariQ ID (V-ID)</dt><dd><span data-bind="text:contractViewFields.ReferenceNumber"></span> </dd>
+	<dt>Solicitation Number </dt><dd><span data-bind="text: contractViewFields.SolicitationNumber"></span></dd>
+	<dt>Title </dt><dd><span id="title_span" data-bind="text: contractViewFields.Title"></span></dd>
+	<dt >Customer </dt><dd id="customerViewField"><span data-bind="text: contractViewFields.Customer"></span></dd>
+	<dt>Type of Solicitation</dt><dd><span data-bind="text: contractViewFields.TypeofSolicitation"></span></dd>
+	<dt>Proposal Due Date </dt><dd><span  data-bind="spDate:contractViewFields.DueDate,dataFormat:'M/D/YYYY h:mm:ss A'" ></span></dd>
+	<dt>Program Manager</dt>
+	<dd>
+		<span href="#" data-bind="vtompSpUser:contractViewFields.ProgramManager,displayField:'FirstName',defaultValue:''"></span>
+		<span href="#" data-bind="vtompSpUser:contractViewFields.ProgramManager,displayField:'LastName',defaultValue:''"></span>
+		<a href="#" data-bind="spMailHref:contractViewFields.ProgramManager,displayField:'EMail',hrefField:'EMail'"></a>
+	 </dd>
+		<dt>Set-Aside/Competition Pool  </dt><dd><div style="margin-left:233px;" data-bind="spChoiceCSV:contractViewFields.CompetitionType"></div></dd>
+			<dt>Customer Agency  </dt><dd><div style="margin-left:233px;" data-bind="text:contractViewFields.CustomerAgencyShort "></div></dd>
+			<dt>Partner Response Needed By </dt><dd><div style="margin-left:233px;"><span data-bind="spDate:contractViewFields.PartnerResponseNeededBy,dataFormat:'M/D/YYYY'"></span> COB</div></dd>
+			
+			<dt>Teaming Status</dt><dd><div style="margin-left:233px;" data-bind="text: contractViewFields.TeamingStatus"></div></dd>
+			<dt>Period of Performance</dt><dd><div style="margin-left:233px;" data-bind="spProjectDuration: contractViewFields.PeriodofPerformance"></div></dd>
+			<dt>Place of Performance</dt><dd><div style="margin-left:233px;" data-bind="text: contractViewFields.PlaceofPerformance"></div></dd>
+			<dt>LOE Estimate</dt><dd><div style="margin-left:233px;" data-bind="text: contractViewFields.LOEEstimate"></div></dd>
+			<dt>Incumbent Contractors </dt><dd><div style="margin-left:233px;" data-bind="text: contractViewFields.IncumbentContractors"></div></dd>
+			<dt>Clearance Requirement</dt><dd><div style="margin-left:233px;" data-bind="text: contractViewFields.ClearanceRequirement"></div></dd>
+			<dt>Date Released </dt><dd><div style="margin-left:233px;" data-bind="spDate:contractViewFields.Created,dataFormat:'M/D/YYYY h:mm:ss A'"></div></dd>
+			<dt>Government Documents </dt><dd>
+				<ul style="margin-left:233px;" data-bind="foreach: GovernmentDocuments" class="list-unstyled"> 
+					<li><a data-bind="attr: { href: url }"><span data-bind="text: name"></span>
+					</a></li>
+				</ul>
+			</dd>
+
+
+	</dl><div style="display:none;">
+			<div class="border-line-top"></div><strong style="font-size: 1.2em;">Government Documents:</strong><div class="border-line"></div>
+			<div>
+			<ul data-bind="foreach: GovernmentDocuments" class="list-unstyled"> 
+			<li><a style="color:white;" data-bind="attr: { href: url }"><span data-bind="text: name"></span>
+			 </a></li>
+			</ul>
+			</div>
+			</div>
+		</div>
+		
+		<div class="col-sm-6">
+			<div style="background-color: #eee; margin-top: 3px;">
+			<table style="width: 100%">
+				<tr>
+					<td>
+					<div style="background-color: #4E7AC7; margin:2px;color:white;font-size:1.1em;padding:5px;">
+						Opportunity Synopsis
+					</div>
+					</td>
+				</tr>
+					<td>
+						<div style="background-color: #eee;font-weight:normal;text-align:left;padding:7px;" data-bind="html: contractViewFields.Description">
+						<div>
+					</td>
+				<tr>
+				</tr>
+			</table>
+			</div>
+			 --><br />
+			
+			<div class="border-line-top"></div><strong style="font-size: 1.2em;">Join the Team!</strong>        <span>Fill in the boxes below to let us know if you'd like to be involved.</span><div class="border-line"></div>
+			 Describe your technical capability and/or competitive advantages you could bring to help win this task.<br/>
+			 <textarea class="ForumComment" id="techincalCapability" rows="6"> </textarea><br />
+			 Do you have any recent, relevant past performance doing work of similar size and scope? Briefly describe the work and identify client, location, dates of work, and size of effort.<br/>
+			 <textarea class="ForumComment" id="pastPerformance" rows="6"> </textarea><br />
+			 Do you have incumbency or knowledge of this task (such as end customer, project size, personnel on staff, etc.)?<br />
+			<textarea class="ForumComment" id="incumbencyKnowledge" rows="6"> </textarea><br />
+			<div style="text-align:center;margin-top:10px;">
+			<input type="radio" name="interest-group" value="Supporting" /><span style="margin-right:20px">Interested in Supporting</span>
+			
+			<input type="radio" name="interest-group" value="Leading" />Interested in Leading
+			</div>
+			<div style="text-align:center;">
+			
+			
+			<input style="text-align: center" id="newCommentButton" class="SubmitCommentButton" type="button" value="Submit Interest"  data-bind='click: $root.submitForumComment' href="#" /></div>
+		</div>
+	</div>
